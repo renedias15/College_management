@@ -77,7 +77,7 @@ export default {
         formData.append('selectedCourse', this.selectedCourse);
         formData.append('photo', this.photo);
         formData.append('marksheet', this.marksheet);
-            this.axios.post('http://rene011.pythonanywhere.com/enteranceForm',formData)
+            this.axios.post('https://rene011.pythonanywhere.com/enteranceForm',formData)
       .then((res)=>{
         console.warn(res);
         this.openPopup()
@@ -90,7 +90,7 @@ export default {
       this.marksheet = event.target.files[0];
     },
      fetchCourses() {
-      axios.get('http://rene011.pythonanywhere.com/EntranceForm_courses')
+      axios.get('https://rene011.pythonanywhere.com/EntranceForm_courses')
         .then(response => {
           this.courses = response.data;
         })
