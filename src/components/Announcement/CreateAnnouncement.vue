@@ -28,7 +28,7 @@ export default {
    methods:{
     postData(e)
     {
-      axios.post('http://rene011.pythonanywhere.com/addAnnouncement', { announcement: this.announcement,title:this.title })
+      axios.post('https://rene011.pythonanywhere.com/addAnnouncement', { announcement: this.announcement,title:this.title })
       .then((res)=>{
         console.warn(res);
       })
