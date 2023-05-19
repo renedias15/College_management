@@ -80,7 +80,7 @@ export default {
   methods: {
     notify() {
       const posts={'body':this.body,'selectedCourse':this.selectedCourse}
-      this.axios.post('http://rene011.pythonanywhere.com/send-email', posts)
+      this.axios.post('https://rene011.pythonanywhere.com/send-email', posts)
         .then((res) => {
         
           console.warn(res);  
@@ -96,7 +96,7 @@ export default {
       this.$modal.hide('my-popup');
     },
     fetchForms() {
-      axios.get('http://rene011.pythonanywhere.com/getElligibleApplicants')
+      axios.get('https://rene011.pythonanywhere.com/getElligibleApplicants')
         .then(response => {
           this.ent_forms = response.data;
         })
@@ -105,7 +105,7 @@ export default {
         });
     },
     fetchCourses() {
-      axios.get('http://rene011.pythonanywhere.com/EntranceForm_courses')
+      axios.get('https://rene011.pythonanywhere.com/EntranceForm_courses')
         .then(response => {
           this.courses = response.data;
         })
