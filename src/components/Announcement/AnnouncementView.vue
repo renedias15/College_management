@@ -1,15 +1,22 @@
 <template>
-  <div class="announcement-board">
-    <h2>Announcement Board</h2>
-    <div v-for="announcement in announcements" :key="announcement[0]" class="announcement">
-      <h3>{{ announcement[2]}}</h3>
-      <p>{{ announcement[1] }}</p>
-      <span class="date">{{ formatDate(announcement[3]) }}</span>
-    </div>
-    <div v-if="announcements.length === 0" class="no-announcements">
-      No announcements for today.
-    </div>
+<div class="announcement-board">
+  <h2>Announcement Board</h2>
+  
+  <!-- Loop through each announcement in the 'announcements' array -->
+  <div v-for="announcement in announcements" :key="announcement.id" class="announcement">
+    <!-- Display the announcement title -->
+    <h3>{{ announcement.title }}</h3>
+    <!-- Display the announcement text -->
+    <p>{{ announcement.text }}</p>
+    <!-- Display the formatted announcement date -->
+    <span class="date">{{ formatDate(announcement.created_date) }}</span>
   </div>
+  
+  <!-- Display a message if there are no announcements -->
+  <div v-if="announcements.length === 0" class="no-announcements">
+    No announcements for today.
+  </div>
+</div>
 </template>
 
 <script>
