@@ -66,7 +66,7 @@ export default {
     login(e) {
       e.preventDefault(); // Prevent form submission
 
-      axios.get("http://rene011.pythonanywhere.com/Adminlogin").then((response) => {
+      axios.get("https://rene011.pythonanywhere.com/Adminlogin").then((response) => {
         const data = response.data;
 
         if (this.email === data[0] && this.password === data[1]) {
