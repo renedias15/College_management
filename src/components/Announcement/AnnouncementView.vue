@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     fetchAnnouncements() {
-      axios.get('http://rene011.pythonanywhere.com/getAnnouncements')
+      axios.get('https://rene011.pythonanywhere.com/getAnnouncements')
         .then(response => {
           this.announcements = response.data;
         })
