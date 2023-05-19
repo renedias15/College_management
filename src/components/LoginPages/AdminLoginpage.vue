@@ -69,7 +69,7 @@ export default {
       axios.get("https://rene011.pythonanywhere.com/Adminlogin").then((response) => {
         const data = response.data;
 
-        if (this.email === data['email'] && this.password === data['password']) {
+        if (this.email === data[0] && this.password === data[1]) {
           const adminDetails = {
             id: this.email,
             type:'admin'
