@@ -63,7 +63,7 @@ export default {
   },
   methods: {
     submitForm() {
-      axios.post(`http://localhost:5000/requestLeave/${this.leave.id}`, this.leave)
+      axios.post(`http://rene011.pythonanywhere.com/requestLeave/${this.leave.id}`, this.leave)
         .then(response => {
           console.warn(response);
           console.log('Leave request has been sent');

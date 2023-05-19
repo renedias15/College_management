@@ -76,7 +76,7 @@ export default {
   },
     postData(e)
     {
-      this.axios.post('http://localhost:5000/addTeacher',this.teacher)
+      this.axios.post('http://rene011.pythonanywhere.com/addTeacher',this.teacher)
       .then((res)=>{
         console.warn(res);
       })

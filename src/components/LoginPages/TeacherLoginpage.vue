@@ -66,7 +66,7 @@ export default {
     login(e) {
       e.preventDefault(); // Prevent form submission
 
-      axios.get("http://localhost:5000/Teacherlogin", {
+      axios.get("http://rene011.pythonanywhere.com/Teacherlogin", {
       params: {
         email: this.email // Pass the email value as a query parameter
       }

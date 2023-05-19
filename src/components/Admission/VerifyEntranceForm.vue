@@ -30,8 +30,8 @@
           <td>{{ ent_form[1] }}</td>
           <td>{{ ent_form[2] }}</td>
           <td>{{ ent_form[3] }}</td>
-          <td> <a :href="'http://localhost:5000/'+ent_form[4]" target="_blank">Image</a></td>
-          <td> <a :href="'http://localhost:5000/'+ent_form[5]" target="_blank">Image</a></td>
+          <td> <a :href="'http://rene011.pythonanywhere.com/'+ent_form[4]" target="_blank">Image</a></td>
+          <td> <a :href="'http://rene011.pythonanywhere.com/'+ent_form[5]" target="_blank">Image</a></td>
           <td>
             <button class="btn btn-success mr-2" @click="Elligible(ent_form[0],'A')">Elligible</button>
             <button class="btn btn-danger" @click="NonElligible(ent_form[0],'R')">Non Elligible</button>
@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     fetchForms() {
-      axios.get('http://localhost:5000/getEnteranceForms')
+      axios.get('http://rene011.pythonanywhere.com/getEnteranceForms')
         .then(response => {
           this.ent_forms = response.data;
         })
@@ -87,7 +87,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         }
-        axios.put(`http://localhost:5000/verifyApplicant/${id}/${res}`)
+        axios.put(`http://rene011.pythonanywhere.com/verifyApplicant/${id}/${res}`)
         .then(response => {
           console.warn(response)
           this.ent_forms = this.ent_forms.filter(ent_forms => ent_forms[0] !== id);
@@ -101,7 +101,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         }
-        axios.put(`http://localhost:5000/verifyApplicant/${id}/${res}`)
+        axios.put(`http://rene011.pythonanywhere.com/verifyApplicant/${id}/${res}`)
         .then(response => {
           console.warn(response)
           this.ent_forms = this.ent_forms.filter(ent_forms => ent_forms[0] !== id);

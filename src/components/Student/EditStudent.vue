@@ -59,7 +59,7 @@ export default {
   mounted() {
     const studentId = this.$route.params.id;
   // Make an API request to fetch the student details
-  axios.get(`http://localhost:5000/getStudent/${studentId}`)
+  axios.get(`http://rene011.pythonanywhere.com/getStudent/${studentId}`)
     .then(response => {
       // Populate the student object with the fetched data
          const data = response.data;
@@ -82,7 +82,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         }
-      axios.put(`http://localhost:5000/updateStudent/${this.student.id}`, this.student)
+      axios.put(`http://rene011.pythonanywhere.com/updateStudent/${this.student.id}`, this.student)
         .then(response => {
             console.warn(response);
           console.log('Student updated successfully');

@@ -64,7 +64,7 @@ export default {
   methods:{
     postData(e)
     {
-      this.axios.post('http://localhost:5000/addCourse',this.posts)
+      this.axios.post('http://rene011.pythonanywhere.com/addCourse',this.posts)
       .then((res)=>{
         console.warn(res);
       })

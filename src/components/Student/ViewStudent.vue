@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     fetchStudents() {
-      axios.get('http://localhost:5000/getStudents')
+      axios.get('http://rene011.pythonanywhere.com/getStudents')
         .then(response => {
           this.students = response.data;
         })
