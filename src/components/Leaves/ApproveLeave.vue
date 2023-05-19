@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     fetchLeaveRequests() {
-      axios.get('http://rene011.pythonanywhere.com/getLeaveRequests')
+      axios.get('https://rene011.pythonanywhere.com/getLeaveRequests')
         .then(response => {
           this.leaves = response.data;
         })
@@ -78,7 +78,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         } 
-      axios.delete(`http://rene011.pythonanywhere.com/approveLeave/${leaveId}`)
+      axios.delete(`https://rene011.pythonanywhere.com/approveLeave/${leaveId}`)
         .then(response => {
           console.warn(response)
           this.leaves = this.leaves.filter(leaves => leaves[1] !== leaveId);
@@ -96,7 +96,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         } 
-      axios.delete(`http://rene011.pythonanywhere.com/rejectLeave/${leaveId}`,{ data: { reason: reason } })
+      axios.delete(`https://rene011.pythonanywhere.com/rejectLeave/${leaveId}`,{ data: { reason: reason } })
         .then(response => {
           console.warn(response)
           this.leaves = this.leaves.filter(leaves => leaves[1] !== leaveId);
