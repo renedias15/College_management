@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     fetchStudents() {
-      axios.get('http://rene011.pythonanywhere.com/getStudents')
+      axios.get('https://rene011.pythonanywhere.com/getStudents')
         .then(response => {
           this.students = response.data;
         })
