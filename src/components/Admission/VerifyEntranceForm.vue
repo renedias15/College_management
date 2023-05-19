@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     fetchForms() {
-      axios.get('http://rene011.pythonanywhere.com/getEnteranceForms')
+      axios.get('https://rene011.pythonanywhere.com/getEnteranceForms')
         .then(response => {
           this.ent_forms = response.data;
         })
@@ -87,7 +87,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         }
-        axios.put(`http://rene011.pythonanywhere.com/verifyApplicant/${id}/${res}`)
+        axios.put(`https://rene011.pythonanywhere.com/verifyApplicant/${id}/${res}`)
         .then(response => {
           console.warn(response)
           this.ent_forms = this.ent_forms.filter(ent_forms => ent_forms[0] !== id);
@@ -101,7 +101,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         }
-        axios.put(`http://rene011.pythonanywhere.com/verifyApplicant/${id}/${res}`)
+        axios.put(`https://rene011.pythonanywhere.com/verifyApplicant/${id}/${res}`)
         .then(response => {
           console.warn(response)
           this.ent_forms = this.ent_forms.filter(ent_forms => ent_forms[0] !== id);
