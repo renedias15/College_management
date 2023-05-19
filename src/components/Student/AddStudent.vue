@@ -58,7 +58,7 @@ export default {
   methods:{
     postData(e)
     {
-      this.axios.post('http://rene011.pythonanywhere.com/addStudent',this.posts)
+      this.axios.post('https://rene011.pythonanywhere.com/addStudent',this.posts)
       .then((res)=>{
         console.warn(res);
         this.$router.push('/AdminHomepage');
