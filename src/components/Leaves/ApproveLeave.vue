@@ -20,15 +20,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="leaves in filteredLeaves" :key="leaves[1]">
-           <td>{{ leaves[0] }}</td>
-          <td>{{ leaves[3] }}</td>
-          <td>{{ leaves[4] }}</td>
-          <td>{{ leaves[5] }}</td>
-          <td>{{ leaves[6] }}</td>
+        <tr v-for="leaves in filteredLeaves" :key="leaves.id">
+           <td>{{ leaves.name }}</td>
+          <td>{{ leaves.leave_type }}</td>
+          <td>{{ leaves.reason }}</td>
+          <td>{{ leaves.from_date }}</td>
+          <td>{{ leaves.to_date }}</td>
           <td>
-            <button class="btn btn-success mr-2" @click="ApproveLeave(leaves[1])">Approve</button>
-            <button class="btn btn-danger" @click="RejectLeave(leaves[1])">Reject</button>
+            <button class="btn btn-success mr-2" @click="ApproveLeave(leaves.id)">Approve</button>
+            <button class="btn btn-danger" @click="RejectLeave(leaves.id)">Reject</button>
           </td>
         </tr>
       </tbody>
@@ -57,7 +57,7 @@ export default {
     filteredLeaves() {
       // Filter the students based on the search text
       return this.leaves.filter(leaves => {
-        const name = leaves[0].toLowerCase();
+        const name = leaves.name.toLowerCase();
         const search = this.searchText.toLowerCase();
         return name.includes(search);
       });
@@ -81,7 +81,7 @@ export default {
       axios.delete(`https://rene011.pythonanywhere.com/approveLeave/${leaveId}`)
         .then(response => {
           console.warn(response)
-          this.leaves = this.leaves.filter(leaves => leaves[1] !== leaveId);
+          this.leaves = this.leaves.filter(leaves => leaves.id !== leaveId);
         })
         .catch(error => {
           console.error('Error deleting student:', error);
@@ -99,7 +99,7 @@ export default {
       axios.delete(`https://rene011.pythonanywhere.com/rejectLeave/${leaveId}`,{ data: { reason: reason } })
         .then(response => {
           console.warn(response)
-          this.leaves = this.leaves.filter(leaves => leaves[1] !== leaveId);
+          this.leaves = this.leaves.filter(leaves => leaves.id !== leaveId);
         })
         .catch(error => {
           console.error('Error deleting student:', error);
