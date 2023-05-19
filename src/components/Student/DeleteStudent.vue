@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     fetchStudents() {
-      axios.get('http://rene011.pythonanywhere.com/getStudents')
+      axios.get('https://rene011.pythonanywhere.com/getStudents')
         .then(response => {
           this.students = response.data;
         })
@@ -79,7 +79,7 @@ export default {
         if (!confirmation) {
             return; // Cancel the update if the user cancels the confirmation
         } 
-      axios.delete(`http://rene011.pythonanywhere.com/deleteStudent/${studentId}`)
+      axios.delete(`https://rene011.pythonanywhere.com/deleteStudent/${studentId}`)
         .then(response => {
           console.warn(response)
           this.students = this.students.filter(student => student[0] !== studentId);
