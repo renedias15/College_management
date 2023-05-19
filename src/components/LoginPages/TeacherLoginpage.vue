@@ -74,7 +74,7 @@ export default {
         
         const data = response.data;
 
-        if (this.email === data[0] && this.password === data[1]) {
+        if (this.email === data['email'] && this.password === data['password']) {
           const teacherDetails = {
             id: this.email,
             type:'teacher'
