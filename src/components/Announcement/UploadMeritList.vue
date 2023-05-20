@@ -46,7 +46,7 @@ export default {
         formData.append('course', this.selectedCourse);
         formData.append('file', this.file);
         console.log([...formData.entries()]);
-            this.axios.post('http://localhost:5000/uploadMeritList',formData)
+            this.axios.post('https://hope1.onrender.com/uploadMeritList',formData)
       .then((res)=>{
         console.warn(res);
       })
